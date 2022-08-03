@@ -20,7 +20,41 @@ function Main() {
     <main className="main">
       <section className={`main__list ${open ? "open" : ""}`}>
         <h2>Answers list</h2>
-        {/* answers should go here */}
+        <div className="answer"> 
+       <h2>{user.username} said:</h2>
+       <p> What would you say that are the best feautures of your duck?</p>
+       <ul>
+        {user.bestFeatures.map((feature, index) => (
+          <li key={index}>{feature}</li>
+        ))}
+       </ul>
+
+        <p> What would you say that are the worst feautures of your duck?</p>
+        <ul>
+        {user.worstFeatures.map((feature, index) => (
+          <li key={index}>{feature}</li>
+        ))}
+        </ul>
+
+        <p> How do you rate your rubber duck consistency?</p>
+        <p>{user.consistency}</p>
+
+        <p> How do you rate your rubber duck colour?</p>
+        <p>{user.colour}</p>
+
+        <p> How do you rate your rubber duck logo?</p>
+        <p>{user.logo}</p>
+
+        <p> How much time do you spend with your rubber duck?</p>
+        <ul>
+        {user.timeSpent.map((time, index) => (
+          <li key={index}>{time}</li>
+        ))}
+        </ul>
+
+        <p> What do you think about your rubber duck?</p>
+        <p>{user.review}</p>
+        </div>
       </section>
       <section className="main__form">
         <form
